@@ -22,6 +22,19 @@
                     ]
                 },
                 {
+                    "owner": "mm2",
+                    "pattern": [
+                        {
+                            "regexp": "^..\/out_src\/(.*?):(\\d+):(\\d*):?\\s+(?:fatal\\s+)?(warning|error):\\s+(.*)$",
+                            "file": 1,
+                            "line": 2,
+                            "column": 3,
+                            "severity": 4,
+                            "message": 5,
+                        }
+                    ]
+                },
+                {
                     "owner": "mm1",
                     "pattern": [
                         {
@@ -34,10 +47,10 @@
                             "message": 5,
                         }
                     ]
-                }
+                },
             ],
-            "command": "make ci",
-            // "command": "make ci_fast",
+            // "command": "make ci",
+            "command": "make ci_fast",
             // "command": "make bd",
             "group": {
                 "kind": "build",

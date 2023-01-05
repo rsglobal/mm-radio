@@ -16,6 +16,9 @@ srcs = [
     'src/RadioSim.cpp',
     'src/RadioVoice.cpp',
     'src/service.cpp',
+    'src/RadioHalManager.cpp',
+    'src/mm/ModemManager.cpp',
+    'src/mm/ModemSimple.cpp',
 ]
 
 cflags = ['-Wno-unused-parameter']

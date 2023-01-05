@@ -76,7 +76,9 @@ static void main() {
 
     publishRadioConfig();
 
-    publishRadio("slot1");
+    auto radioHalManager = RadioHalManager::getInstance();
+    radioHalManager->registerFrontendRadioConfig(AServiceManager_addService);
+    radioHalManager->registerFrontendElements(/*slot = */ 1, AServiceManager_addService);
 
     LOG(DEBUG) << "MM Radio HAL service is operational";
     ABinderProcess_joinThreadPool();

@@ -28,10 +28,10 @@ PREPARE:=.out/prepare_docker.timestamp
 $(PREPARE): $(DOCKERFILE)
 	$(if $(DOCKER_BIN),,$(call print_no_docker_err))
 	mkdir -p $(dir $@)
-	$(DOCKER_BIN) build -t local/build-env -f $(DOCKERFILE) .;
+	$(DOCKER_BIN) build -t local/build-env --build-arg HOME=$$(dirname $$(pwd)) -f $(DOCKERFILE) .;
 	$(DOCKER_BIN) stop $(IMAGE_NAME) || true
 	$(DOCKER_BIN) rm $(IMAGE_NAME) || true
-	$(DOCKER_BIN) run -itd --name $(IMAGE_NAME) --network="host" -v $(shell pwd):/home/user/mm-radio local/build-env
+	$(DOCKER_BIN) run -itd --name $(IMAGE_NAME) --network="host" -v $$(pwd):$$(pwd) -u $$(id -u):$$(id -g) local/build-env
 	@touch $@
 
 prepare: $(PREPARE)

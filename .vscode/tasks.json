@@ -6,47 +6,7 @@
         {
             "label": "build",
             "type": "shell",
-            "problemMatcher": [
-                {
-                    "owner": "mm",
-                    "pattern": [
-                        {
-                            "regexp": "^\/home\/user\/mm-radio\/(.*?):(\\d+):(\\d*):?\\s+(?:fatal\\s+)?(warning|error):\\s+(.*)$",
-                            "file": 1,
-                            "line": 2,
-                            "column": 3,
-                            "severity": 4,
-                            "message": 5,
-                        },
-                    ]
-                },
-                {
-                    "owner": "mm2",
-                    "pattern": [
-                        {
-                            "regexp": "^..\/out_src\/(.*?):(\\d+):(\\d*):?\\s+(?:fatal\\s+)?(warning|error):\\s+(.*)$",
-                            "file": 1,
-                            "line": 2,
-                            "column": 3,
-                            "severity": 4,
-                            "message": 5,
-                        }
-                    ]
-                },
-                {
-                    "owner": "mm1",
-                    "pattern": [
-                        {
-                            "regexp": "^(.*?):(\\d+):(\\d*):?\\s+(?:fatal\\s+)?(warning|error):\\s+(.*)$",
-                            "file": 1,
-                            "line": 2,
-                            "column": 3,
-                            "severity": 4,
-                            "message": 5,
-                        }
-                    ]
-                }
-            ],
+            "problemMatcher": "$gcc",
             "command": "make ci",
             // "command": "make ci_fast",
             // "command": "ADBLOG=1 make bd",

@@ -6,9 +6,7 @@ ENV PATH="/home/user/bin:${PATH}"
 
 # Taking into account layer structure, everything should be done within one layer.
 RUN apt-get update && apt-get upgrade -y && \
-    apt-get install -y clang-15 clang-tidy-15 clang-format-15 git libdrm-dev blueprint-tools libgtest-dev clang \
-    llvm make python3 python3-pip wget sudo rsync lld pkg-config ninja-build curl && \
-    pip3 install mako meson jinja2 ply pyyaml
+    apt-get install -y clang-15 clang-tidy-15 git llvm make wget sudo rsync lld curl
 
 ENV RUN_USER user
 ENV RUN_UID 1000
